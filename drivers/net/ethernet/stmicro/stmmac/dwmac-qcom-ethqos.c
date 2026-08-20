@@ -557,6 +557,8 @@ static void ethqos_rgmii_id_macro_init(struct qcom_ethqos *ethqos, int speed)
 
 	if (!ethqos->rgmii_config_loopback_en)
 		rgmii_clrmask(ethqos, RGMII_CONFIG_LOOPBACK_EN, RGMII_IO_MACRO_CONFIG);
+	else
+		rgmii_setmask(ethqos, RGMII_CONFIG_LOOPBACK_EN, RGMII_IO_MACRO_CONFIG);
 
 	rgmii_setmask(ethqos, RGMII_CONFIG2_RX_PROG_SWAP, RGMII_IO_MACRO_CONFIG2);
 }
